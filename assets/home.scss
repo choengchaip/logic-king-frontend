@@ -1,0 +1,56 @@
+.home {
+  .home-overview {
+    .content {
+      background-image: linear-gradient(to right, #FBFBFB, #F1F1F1);
+
+      .me-img {
+        left: 50%;
+        transform: translate(-50%, 10%);
+
+        img {
+          height: 820px;
+        }
+      }
+
+      .me-role {
+        bottom: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      @for $i from 1 through 30 {
+        @for $j from 1 through 30 {
+          $x: 2.75 * $i;
+          $y: 1.5 * $j;
+          $target: 10 * $j;
+
+          @keyframes to-top-#{$i}-#{$j} {
+            0% {
+              opacity: 1;
+              top: calc(100vh + #{$y}px);
+            }
+
+            30% {
+              opacity: 1;
+            }
+
+            100% {
+              opacity: 0;
+              top: calc(50% + #{$target}px);
+            }
+          }
+
+          .me-skill-#{$i}-#{$j} {
+            position: absolute;
+            height: 75px;
+            width: 75px;
+            left: #{$x}vw;
+            opacity: 0;
+            animation-name: to-top-#{$i}-#{$j};
+            animation-duration: 7s;
+          }
+        }
+      }
+    }
+  }
+}
