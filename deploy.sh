@@ -6,4 +6,3 @@ docker build \
   -t logic-king-frontend:lastest .
 
 docker push logic-king-frontend:lastest
-
