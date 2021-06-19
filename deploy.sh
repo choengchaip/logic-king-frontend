@@ -1,8 +1,8 @@
 #!/bin/sh
 
 docker build \
-  --build-args APP_HOST=${APP_HOST} \
-  --build-args APP_PORT=${APP_PORT} \
-  -t logic-king-frontend:lastest .
+  --build-arg APP_HOST=${APP_HOST} \
+  --build-arg APP_PORT=${APP_PORT} \
+  -t logic-king-frontend:$TAG_TIMESTAMP .
 
 docker push logic-king-frontend:lastest
