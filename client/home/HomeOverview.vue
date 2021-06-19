@@ -41,7 +41,7 @@ export default Vue.extend({
       count: 0,
       healer: null,
       killer: null,
-      icons: [],
+      icons: []
     }
   },
   methods: {
@@ -67,13 +67,13 @@ export default Vue.extend({
         {
           id,
           src: logo,
-          className: `me-skill-${randX}-${randY}`,
+          className: `me-skill-${randX}-${randY}`
         },
-        ...vm.icons,
+        ...vm.icons
       ]
 
       vm.count++
-    },
+    }
   },
   mounted () {
     const vm = this;
