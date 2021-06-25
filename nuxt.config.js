@@ -50,23 +50,13 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'Choengchai Phachonyut'
+        content: 'The world is changing!, No time for relax, grab a coffee or beer then coding now!'
       },
       {
         hid: 'og:description',
         name: 'og:description',
         property: 'og:description',
-        content: 'Choengchai Phachonyut'
-      },
-      {
-        hid: 'description',
-        name: 'description',
-        content: 'Choengchai Phachonyut'
-      },
-      {
-        hid: 'og:description',
-        name: 'og:description',
-        content: 'Choengchai Phachonyut'
+        content: 'The world is changing!, No time for relax, grab a coffee or beer then coding now!'
       },
     ],
     link: [
