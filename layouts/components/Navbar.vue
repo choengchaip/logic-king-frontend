@@ -21,17 +21,21 @@ export default Vue.extend({
   },
   mounted () {
     const home = document.getElementById('home')
-    home.addEventListener('scroll', this.onScroll, { passive: true })
+    if (home) {
+      home.addEventListener('scroll', this.onScroll, { passive: true })
+    }
   },
   unmounted () {
     const home = document.getElementById('home')
-    home.removeEventListener('scroll', this.onScroll)
+    if (home) {
+      home.removeEventListener('scroll', this.onScroll)
+    }
   },
   methods: {
     onScroll () {
       const home = document.getElementById('home')
       if (home) {
-        this.show = home.scrollTop >= (window.innerHeight - 100)
+        (this as any).show = home.scrollTop >= (window.innerHeight - 100)
       }
     }
   }

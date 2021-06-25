@@ -61,6 +61,11 @@
 
           @keyframes to-top-#{$i}-#{$j} {
             0% {
+              opacity: 0;
+              top: calc(100vh + #{$y}px);
+            }
+
+            10% {
               opacity: 1;
               top: calc(100vh + #{$y}px);
             }
@@ -84,6 +89,7 @@
             animation-name: to-top-#{$i}-#{$j};
             animation-duration: 7s;
             animation-iteration-count: infinite;
+            animation-timing-function: linear;
           }
         }
       }
@@ -91,7 +97,6 @@
   }
 
   .home-resume {
-    padding-top: $navbar-height;
     background-color: rgb(28, 28, 28);
     display: flex;
     flex-direction: column;
@@ -100,10 +105,13 @@
     height: 100vh;
     width: 100vw;
     scroll-snap-align: start;
+
+    @media (min-width: 768px) {
+      padding-top: $navbar-height;
+    }
   }
 
   .home-project {
-    padding-top: $navbar-height;
     background-color: rgb(12, 12, 12);
     display: flex;
     flex-direction: column;
@@ -112,10 +120,13 @@
     height: 100vh;
     width: 100vw;
     scroll-snap-align: start;
+
+    @media (min-width: 768px) {
+      padding-top: $navbar-height;
+    }
   }
 
   .home-skill {
-    padding-top: $navbar-height;
     background-color: rgb(28, 28, 28);
     display: flex;
     flex-direction: column;
@@ -124,10 +135,13 @@
     height: 100vh;
     width: 100vw;
     scroll-snap-align: start;
+
+    @media (min-width: 768px) {
+      padding-top: $navbar-height;
+    }
   }
 
   .home-blog {
-    padding-top: $navbar-height;
     background-color: rgb(12, 12, 12);
     display: flex;
     flex-direction: column;
@@ -136,5 +150,9 @@
     height: 100vh;
     width: 100vw;
     scroll-snap-align: start;
+
+    @media (min-width: 768px) {
+      padding-top: $navbar-height;
+    }
   }
 }
