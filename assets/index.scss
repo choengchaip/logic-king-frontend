@@ -17,3 +17,12 @@ html {
 a {
   text-decoration: none;
 }
+
+.navbar {
+  transition: all 0.6s ease;
+  top: -$navbar-height;
+
+  &.active {
+    top: 0;
+  }
+}

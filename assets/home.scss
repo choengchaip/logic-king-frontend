@@ -1,21 +1,56 @@
 .home {
+  scroll-snap-type: y mandatory;
+  height: 100vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+
   .home-overview {
+    height: 100vh;
+    width: 100vw;
+    scroll-snap-align: start;
+
     .content {
       background-image: linear-gradient(to right, #FBFBFB, #F1F1F1);
 
       .me-img {
+        width: 100%;
         left: 50%;
-        transform: translate(-50%, 10%);
+        transform: translate(-50%, 0%);
+
+        @media (min-width: 768px) {
+          width: unset;
+          left: 50%;
+          transform: translate(-50%, 10%);
+        }
 
         img {
-          height: 820px;
+          width: 100%;
+
+          @media (min-width: 640px) {
+            width: 55%;
+          }
+
+          @media (min-width: 768px) {
+            width: unset;
+          }
+
+          @media (min-width: 1024px) {
+            height: 820px;
+          }
         }
       }
 
       .me-role {
-        bottom: 20%;
+        top: 50%;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translate(-50%, -50%);
+
+        @media (min-width: 768px) {
+          top: unset;
+          bottom: 20%;
+          left: 50%;
+          transform: translateX(-50%);
+        }
       }
 
       @for $i from 1 through 30 {
@@ -48,9 +83,58 @@
             opacity: 0;
             animation-name: to-top-#{$i}-#{$j};
             animation-duration: 7s;
+            animation-iteration-count: infinite;
           }
         }
       }
     }
+  }
+
+  .home-resume {
+    padding-top: $navbar-height;
+    background-color: rgb(28, 28, 28);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    scroll-snap-align: start;
+  }
+
+  .home-project {
+    padding-top: $navbar-height;
+    background-color: rgb(12, 12, 12);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    scroll-snap-align: start;
+  }
+
+  .home-skill {
+    padding-top: $navbar-height;
+    background-color: rgb(28, 28, 28);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    scroll-snap-align: start;
+  }
+
+  .home-blog {
+    padding-top: $navbar-height;
+    background-color: rgb(12, 12, 12);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    scroll-snap-align: start;
   }
 }

@@ -2,7 +2,7 @@ require('dotenv').config()
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
-  target: 'static',
+  target: 'server',
 
   // Server config
   server: {
@@ -19,13 +19,64 @@ export default {
       lang: 'en'
     },
     meta: [
-      {charset: 'utf-8'},
-      {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-      {hid: 'description', name: 'description', content: ''}
+      { charset: 'utf-8' },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1'
+      },
+      {
+        hid: 'image',
+        name: 'image',
+        property: 'image',
+        content: 'https://logic-king.sgp1.digitaloceanspaces.com/singh_04.png'
+      },
+      {
+        hid: 'og:image',
+        name: 'og:image',
+        property: 'og:image',
+        content: 'https://logic-king.sgp1.digitaloceanspaces.com/singh_04.png'
+      },
+      {
+        hid: 'title',
+        name: 'title',
+        content: 'Choengchai Phachonyut'
+      },
+      {
+        hid: 'og:title',
+        name: 'og:title',
+        content: 'Choengchai Phachonyut'
+      },
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Choengchai Phachonyut'
+      },
+      {
+        hid: 'og:description',
+        name: 'og:description',
+        content: 'Choengchai Phachonyut'
+      },
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Choengchai Phachonyut'
+      },
+      {
+        hid: 'og:description',
+        name: 'og:description',
+        content: 'Choengchai Phachonyut'
+      },
     ],
     link: [
-      {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
-      {rel: 'preconnect', href: 'https://fonts.gstatic.com'},
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicon.ico'
+      },
+      {
+        rel: 'preconnect',
+        href: 'https://fonts.gstatic.com'
+      },
       {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css2?family=Mali:wght@300;400;600;700&family=Quicksand:wght@300;400;600;700&display=swap'
@@ -39,7 +90,9 @@ export default {
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [
+    '~/plugins/ssr.ts'
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -63,10 +116,8 @@ export default {
     config: {
       /* Extend the Tailwind config here */
       purge: {
-        content: [
-          '~/pages/*.vue',
-          '~/client/*/**.vue',
-        ]
+        enabled: false,
+        content: []
       }
     }
   }
