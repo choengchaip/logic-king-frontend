@@ -1,4 +1,4 @@
-name: Build
+name: Build And Deploy
 on:
   push:
     branches:
@@ -11,6 +11,5 @@ jobs:
     steps:
       - name: Checking out this repository
         uses: actions/checkout@v2
-      - run: docker ps
-      - run: echo "${IMAGE_REF}:latest"
-      - run: echo "${IMAGE_REF}:${GITHUB_SHA}"
+      - run: chmod +x ./deploy.sh
+      - run: ./deploy.sh "${IMAGE_REF}:${GITHUB_SHA}" "${IMAGE_REF}:latest"

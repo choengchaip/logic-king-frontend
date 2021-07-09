@@ -1,10 +1,13 @@
 #!/bin/sh
 
+TAG_COMMIT=$1
+TAG_LATEST=$2
+
 docker build \
   --build-arg APP_HOST=0.0.0.0 \
   --build-arg APP_PORT=8000 \
-  -t chengchaip/logic-frontend:1.0.6 \
-  -t chengchaip/logic-frontend:latest .
+  -t "$TAG_COMMIT" \
+  -t "$TAG_LATEST" .
 
-docker push chengchaip/logic-frontend:1.0.6
-docker push chengchaip/logic-frontend:latest
+docker push "$TAG_COMMIT"
+docker push "$TAG_LATEST"
