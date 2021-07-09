@@ -2,7 +2,7 @@ require('dotenv').config()
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
-  target: 'server',
+  target: 'static',
 
   // Server config
   server: {
@@ -39,13 +39,13 @@ export default {
       {
         hid: 'title',
         name: 'title',
-        content: 'Choengchai Phachonyut'
+        content: 'Choengchai Phachonyut - Grab a coffee and coding now!'
       },
       {
         hid: 'og:title',
         name: 'og:title',
         property: 'og:title',
-        content: 'Choengchai Phachonyut'
+        content: 'Choengchai Phachonyut - Grab a coffee and coding now!'
       },
       {
         hid: 'description',
@@ -108,8 +108,9 @@ export default {
     config: {
       /* Extend the Tailwind config here */
       purge: {
-        enabled: false,
-        content: []
+        content: [
+          'client/**/*.vue'
+        ]
       }
     }
   }

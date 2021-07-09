@@ -15,5 +15,5 @@ RUN yarn
 
 COPY . /app
 
-RUN yarn build
+RUN yarn generate
 CMD yarn start
