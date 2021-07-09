@@ -6,7 +6,12 @@ on:
 jobs:
   Build-Image:
     runs-on: ubuntu-latest
+    env:
+      TAG_COMMIT: chengchaip/logic-frontend:latest
+      TAG_LATEST: chengchaip/logic-frontend:$GITHUB_SHA
     steps:
       - name: Checking out this repository
         uses: actions/checkout@v2
       - run: docker ps
+      - run: echo "${TAG_COMMIT}"
+      - run: echo "${TAG_LATEST}"
