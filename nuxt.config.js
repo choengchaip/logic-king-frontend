@@ -15,9 +15,6 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'logic-king-frontend',
-    htmlAttrs: {
-      lang: 'en'
-    },
     meta: [
       { charset: 'utf-8' },
       {
@@ -71,7 +68,7 @@ export default {
       },
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Mali:wght@300;400;600;700&family=Quicksand:wght@300;400;600;700&display=swap'
+        href: 'https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&family=Quicksand:wght@300;400;600;700&display=swap'
       },
     ]
   },
@@ -99,14 +96,44 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: [
+    'nuxt-i18n'
+  ],
+
+  // i18n: https://i18n.nuxtjs.org/
+  i18n: {
+    seo: true,
+    locales: [
+      {
+        code: 'th',
+        iso: 'th',
+        file: 'th.ts'
+      },
+      {
+        code: 'en',
+        iso: 'en-US',
+        file: 'en.ts'
+      }
+    ],
+    lazy: true,
+    langDir: 'langs/',
+    defaultLocale: 'th',
+    vueI18n: {
+      fallbackLocale: 'th'
+    },
+    detectBrowserLanguage: {
+      useCookie: true,
+      alwaysRedirect: true,
+      cookieKey: 'i18n_redirected',
+      onlyOnRoot: true
+    }
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 
   tailwindcss: {
     config: {
-      /* Extend the Tailwind config here */
       purge: {
         content: [
           'client/**/*.vue'

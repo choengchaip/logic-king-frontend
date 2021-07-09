@@ -3,31 +3,35 @@
     <div class="container mx-auto mb-14 sm:mb-0">
       <div class="flex flex-wrap sm:pt-16 sm:pb-8 sm:mb-16 border-b-0 sm-border-b lg:border-b-0">
         <div class="my-img flex justify-center p-4 sm:p-8 md:p-0">
-          <img src="/singh_04.png" alt="Choengchai Phachonyut">
+          <IMG
+            src="https://logic-king.sgp1.digitaloceanspaces.com/singh_04.png"
+            loadingSrc="/singh_04_small.png"
+            alt="Choengchai Phachonyut"
+          />
         </div>
         <div class="my-detail sm:text-center lg:text-left p-4 sm:p-8 xl:p-16">
           <h1 class="text-5xl sm:text-7xl font-bold mb-5">
             LOGIC IS KING
           </h1>
           <p class="bg-black text-white py-1 px-3 sm:mx-auto lg:mx-0 text-base sm:text-xl font-semibold max-w-max mb-4">
-            Perfectionistic is an abstraction of professional
+            {{ $t('piaaop') }}
           </p>
           <p class="mb-8 sm:mb-12 text-base sm:text-xl font-semibold">
-            The good environment is the environment <br>
-            that make you stronger
+            {{ $t('tgeitetmys_1') }}<br>
+            {{ $t('tgeitetmys_2') }}
           </p>
           <button
             class="w-full sm:w-max cursor-not-allowed outline-none focus:outline-none py-4 sm:py-6 px-5 bg-black uppercase text-white text-xl font-semibold"
           >
-            download cv
+            {{ $t('download_cv') }}
           </button>
         </div>
       </div>
     </div>
     <div class="mb-8">
       <div class="container mx-auto flex flex-col pb-8 px-4 sm:px-0">
-        <h1 class="bg-black text-white text-4xl font-bold p-4 sm:p-6 max-w-min mx-0 sm:mx-auto lg:mx-0">
-          EXPERIENCE
+        <h1 class="uppercase bg-black text-white text-4xl font-bold p-4 sm:p-6 max-w-max mx-0 sm:mx-auto lg:mx-0">
+          {{ $t('experience') }}
         </h1>
       </div>
       <div class="dot-line hidden sm:block relative">
@@ -60,12 +64,10 @@
               Full Stack Dev.
             </h5>
             <p class="text-base font-light">
-              We make your e-commerce glowing !!<br>
-              We make an automated marketing !!<br>
+              {{ $t('tds_1') }}<br>
+              {{ $t('tds_2') }}<br>
               <br>
-              Every actions of your client will send to you to let you
-              know your target behavior and let you make the campaign
-              or promotion that answer your client needed.
+              {{ $t('tds_3') }}
             </p>
           </div>
         </div>
@@ -76,22 +78,19 @@
           </div>
           <div class="detail">
             <h6 class="text-2xl">
-              2021 - PRESENT
+              2021 - {{ $t('present') }}
             </h6>
             <h6 class="text-2xl font-light">
               Finema
             </h6>
             <h5 class="text-4xl font-bold my-3">
-              Software Engineer.
+              {{ $t('software') }} {{ $t('engineer') }}.
             </h5>
             <p class="text-base font-light">
-              We working on decentralized identity platform<br>
-              to bring greater trust and lower transaction.<br>
+              {{ $t('fnm_1') }}<br>
+              {{ $t('fnm_2') }}<br>
               <br>
-              We use blockchain technology to make our client
-              data be privacy and we implement our core product
-              to client core system to make it more
-              immutable, verifiable, stable with lower cost
+              {{ $t('fnm_3') }}
             </p>
           </div>
         </div>
@@ -99,8 +98,8 @@
     </div>
     <div class="mb-8">
       <div class="container mx-auto flex flex-col pb-8 px-4 sm:px-0">
-        <h1 class="bg-black text-white text-4xl font-bold p-4 sm:p-6 max-w-min mx-0 sm:mx-auto lg:mx-0">
-          EDUCATION
+        <h1 class="bg-black text-white text-4xl font-bold p-4 sm:p-6 max-w-max mx-0 sm:mx-auto lg:mx-0">
+          {{ $t('education') }}
         </h1>
       </div>
       <div class="dot-line hidden sm:block relative">
@@ -127,13 +126,13 @@
               2010 - 2016
             </h6>
             <h6 class="text-2xl font-light">
-              Assumption Sriracha
+              {{ $t('acs') }}
             </h6>
             <h5 class="text-4xl font-bold my-3">
-              SCI-MATH.
+              {{ $t('sci_math') }}
             </h5>
             <p class="text-base font-light">
-              Miss you my friend.
+              {{ $t('mymf') }}
             </p>
           </div>
         </div>
@@ -147,16 +146,16 @@
               2016 - 2019
             </h6>
             <h6 class="text-2xl font-light">
-              Kasetsart University SRC.
+              {{ $t('ku_src') }}
             </h6>
             <h5 class="text-4xl font-bold my-3">
-              Computer Sci.
+              {{ $t('com_sci') }}
             </h5>
             <p class="text-base font-light">
-              I’ve learned many thing from here.<br>
-              I’m very happy to have been there.<br>
+              {{ $t('ku_1') }}<br>
+              {{ $t('ku_2') }}<br>
               <br>
-              Thank you Kasetsart sriracha :)
+              {{ $t('ku_3') }}
             </p>
           </div>
         </div>
@@ -167,8 +166,11 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import IMG from '~/components/IMG.vue'
 
-export default Vue.extend({})
+export default Vue.extend({
+  components: { IMG }
+})
 </script>
 
 <style lang="scss" scoped>

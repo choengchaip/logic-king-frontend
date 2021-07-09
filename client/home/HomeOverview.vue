@@ -1,16 +1,28 @@
 <template>
   <div id="overview" class="home-overview flex flex-col">
-    <div class="container mx-auto hidden sm:flex items-center justify-end py-5 text-sm font-bold">
+    <div class="container mx-auto flex items-center justify-between py-5 px-3 text-sm font-bold">
+      <div class="flags flex">
+        <NuxtLink class="mr-2" :to="switchLocalePath('th')">
+          <img src="/thai.png" alt="Thai">
+        </NuxtLink>
+        <NuxtLink :to="switchLocalePath('en')">
+          <img src="/usa.png" alt="USA">
+        </NuxtLink>
+      </div>
       <span>choengchaip@gmail.com</span>
     </div>
     <div class="flex-grow px-0 md:px-16">
       <div id="content" class="content h-full relative overflow-hidden">
         <div class="me-img absolute p-5 md:p-0 flex items-center justify-center">
-          <img src="/singh_01.png" alt="Choengchai Phachonyut">
+          <IMG
+            src="https://logic-king.sgp1.digitaloceanspaces.com/singh_01.png"
+            loadingSrc="/singh_01_small.png"
+            alt="Choengchai Phachonyut"
+          />
         </div>
         <div class="me-role absolute bg-black py-3 px-5">
-          <h4 class="capitalize text-4xl text-center text-white font-bold">
-            SOFTWARE<br>ENGINEER
+          <h4 class="uppercase text-4xl text-center text-white font-bold">
+            {{ $t('software') }}<br>{{ $t('engineer') }}
           </h4>
         </div>
         <div v-for="icon in icons" :key="icon.id">
@@ -21,11 +33,11 @@
       </div>
     </div>
     <div class="navigator-bar container mx-auto hidden sm:flex justify-center py-5 text-xs font-bold">
-      <a class="mx-6 select-none" href="#overview">ABOUT</a>
-      <a class="mx-6 select-none" href="#resume">RESUME</a>
-      <a class="mx-6 select-none" href="#project">PROJECTS</a>
-      <a class="mx-6 select-none" href="#skill">SKILLS</a>
-      <a class="mx-6 select-none" href="#blog">BLOGS</a>
+      <a class="mx-6 uppercase select-none" href="#overview">{{ $t('about') }}</a>
+      <a class="mx-6 uppercase select-none" href="#resume">{{ $t('resume') }}</a>
+      <a class="mx-6 uppercase select-none" href="#project">{{ $t('project') }}</a>
+      <a class="mx-6 uppercase select-none" href="#skill">{{ $t('skill') }}</a>
+      <a class="mx-6 uppercase select-none" href="#blog">{{ $t('blog') }}</a>
     </div>
   </div>
 </template>
@@ -34,8 +46,10 @@
 import Vue from 'vue'
 import { v4 as uuidv4 } from 'uuid'
 import seed from 'random-seed'
+import IMG from '~/components/IMG.vue'
 
 export default Vue.extend({
+  components: { IMG },
   data: () => {
     return {
       max: 30,

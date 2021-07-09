@@ -1,5 +1,5 @@
 <template>
-  <Home />
+  <Home/>
 </template>
 
 <script lang="ts">
@@ -10,11 +10,6 @@ export default Vue.extend({
   components: {
     Home,
   },
-  data: () => {
-    return {
-      singh: 'SINGH'
-    }
-  }
 })
 </script>
 

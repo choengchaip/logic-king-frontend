@@ -9,6 +9,13 @@
     width: 100vw;
     scroll-snap-align: start;
 
+    .flags {
+      img {
+        height: 15px;
+        width: 25px;
+      }
+    }
+
     .content {
       background-image: linear-gradient(to right, #FBFBFB, #F1F1F1);
 
@@ -101,10 +108,7 @@
     flex-direction: column;
     width: 100vw;
     scroll-snap-align: start;
-
-    @include g-tablet {
-      padding-top: $navbar-height;
-    }
+    padding-top: $navbar-height;
 
     .my-img {
       flex: 0 0 100%;
@@ -219,10 +223,7 @@
     height: 100vh;
     width: 100vw;
     scroll-snap-align: start;
-
-    @include g-tablet {
-      padding-top: $navbar-height;
-    }
+    padding-top: $navbar-height;
   }
 
   .home-skill {
@@ -234,10 +235,7 @@
     height: 100vh;
     width: 100vw;
     scroll-snap-align: start;
-
-    @include g-tablet {
-      padding-top: $navbar-height;
-    }
+    padding-top: $navbar-height;
   }
 
   .home-blog {
@@ -249,9 +247,6 @@
     height: 100vh;
     width: 100vw;
     scroll-snap-align: start;
-
-    @include g-tablet {
-      padding-top: $navbar-height;
-    }
+    padding-top: $navbar-height;
   }
 }

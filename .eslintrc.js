@@ -8,8 +8,11 @@ module.exports = {
     '@nuxtjs/eslint-config-typescript',
     'plugin:nuxt/recommended'
   ],
-  plugins: [
-  ],
-  // add your custom rules here
-  rules: {}
+  plugins: [],
+  rules: {
+    'comma-dangle': 'off',
+    'vue/html-closing-bracket-spacing': 'off',
+    'vue/attribute-hyphenation': 'off',
+    'vue/html-closing-bracket-newline': 'off',
+  }
 }

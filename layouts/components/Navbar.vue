@@ -1,11 +1,11 @@
 <template>
-  <div :class="`navbar hidden sm:block fixed shadow-md left-0 z-50 w-full bg-white ${show ? 'active' : ''}`">
-    <div class="container mx-auto hidden sm:flex justify-center py-5 text-xs font-bold">
-      <a class="mx-6 select-none" href="#overview">ABOUT</a>
-      <a class="mx-6 select-none" href="#resume">RESUME</a>
-      <a class="mx-6 select-none" href="#project">PROJECTS</a>
-      <a class="mx-6 select-none" href="#skill">SKILLS</a>
-      <a class="mx-6 select-none" href="#blog">BLOGS</a>
+  <div :class="`navbar block fixed shadow-md left-0 z-50 w-full bg-white ${show ? 'active' : ''}`">
+    <div class="container mx-auto flex justify-center py-5 text-xs font-bold">
+      <a class="mx-6 uppercase select-none" href="#overview">{{ $t('about') }}</a>
+      <a class="mx-6 uppercase select-none" href="#resume">{{ $t('resume') }}</a>
+      <a class="mx-6 uppercase select-none" href="#project">{{ $t('project') }}</a>
+      <a class="mx-6 uppercase select-none" href="#skill">{{ $t('skill') }}</a>
+      <a class="mx-6 uppercase select-none" href="#blog">{{ $t('blog') }}</a>
     </div>
   </div>
 </template>
