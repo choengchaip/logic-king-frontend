@@ -18,12 +18,6 @@ jobs:
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
       - run: chmod +x ./build.sh
       - run: ./build.sh "${{ env.IMAGE_REF }}:${{ github.sha }}" "${{ env.IMAGE_REF }}:latest"
-
-  Trigger-Deploy:
-    runs-on: ubuntu-latest
-    env:
-      IMAGE_REF: logicking/logic-frontend
-    steps:
       - run: |
           curl --request POST \
             --url https://api.github.com/repos/choengchaip/logic-king-k8s/actions/workflows/11147723/dispatches \
