@@ -27,6 +27,6 @@ jobs:
             --data '{
               "ref": "develop",
               "inputs": {
-                  "tags": "${IMAGE_REF}:${GITHUB_SHA}"
+                  "tags": "${{ env.IMAGE_REF }}:${{ env.GITHUB_SHA }}"
               }
             }'
