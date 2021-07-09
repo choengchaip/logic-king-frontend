@@ -7,6 +7,4 @@ jobs:
   Build-Image:
     runs-on: ubuntu-latest
     steps:
-      - name: Checking out this repository
-        uses: actions/checkout@v2
       run: docker ps
