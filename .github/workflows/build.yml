@@ -22,11 +22,11 @@ jobs:
           curl --request POST \
             --url https://api.github.com/repos/choengchaip/logic-king-k8s/actions/workflows/11147723/dispatches \
             --header 'Accept: application/vnd.github.v3+json' \
-            --header 'Authorization: token ${ secrets.GH_TOKEN }' \
+            --header 'Authorization: token ${secrets.GH_TOKEN}' \
             --header 'Content-Type: application/json' \
             --data '{
               "ref": "develop",
               "inputs": {
-                  "tags": "${{ IMAGE_REF }}:${{ GITHUB_SHA }}"
+                  "tags": "${IMAGE_REF}:${GITHUB_SHA}"
               }
             }'
