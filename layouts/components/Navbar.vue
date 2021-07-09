@@ -1,6 +1,6 @@
 <template>
-  <div :class="`navbar hidden md:block fixed shadow-md left-0 z-50 w-full bg-white ${show ? 'active' : ''}`">
-    <div class="container mx-auto hidden md:flex justify-center py-5 text-xs font-bold">
+  <div :class="`navbar hidden sm:block fixed shadow-md left-0 z-50 w-full bg-white ${show ? 'active' : ''}`">
+    <div class="container mx-auto hidden sm:flex justify-center py-5 text-xs font-bold">
       <a class="mx-6 select-none" href="#overview">ABOUT</a>
       <a class="mx-6 select-none" href="#resume">RESUME</a>
       <a class="mx-6 select-none" href="#project">PROJECTS</a>

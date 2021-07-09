@@ -1,6 +1,6 @@
 <template>
   <div id="overview" class="home-overview flex flex-col">
-    <div class="container mx-auto hidden md:flex items-center justify-end py-5 text-sm font-bold">
+    <div class="container mx-auto hidden sm:flex items-center justify-end py-5 text-sm font-bold">
       <span>choengchaip@gmail.com</span>
     </div>
     <div class="flex-grow px-0 md:px-16">
@@ -20,7 +20,7 @@
         </div>
       </div>
     </div>
-    <div class="navigator-bar container mx-auto hidden md:flex justify-center py-5 text-xs font-bold">
+    <div class="navigator-bar container mx-auto hidden sm:flex justify-center py-5 text-xs font-bold">
       <a class="mx-6 select-none" href="#overview">ABOUT</a>
       <a class="mx-6 select-none" href="#resume">RESUME</a>
       <a class="mx-6 select-none" href="#project">PROJECTS</a>

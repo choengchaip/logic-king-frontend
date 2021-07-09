@@ -1,5 +1,5 @@
 .home {
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y proximity;
   height: 100vh;
   overflow-y: auto;
   scroll-behavior: smooth;
@@ -17,7 +17,7 @@
         left: 50%;
         transform: translate(-50%, 0%);
 
-        @media (min-width: 768px) {
+        @include g-desktop {
           width: unset;
           left: 50%;
           transform: translate(-50%, 10%);
@@ -26,15 +26,15 @@
         img {
           width: 100%;
 
-          @media (min-width: 640px) {
+          @include g-tablet {
             width: 55%;
           }
 
-          @media (min-width: 768px) {
+          @include g-desktop {
             width: unset;
           }
 
-          @media (min-width: 1024px) {
+          @include g-large {
             height: 820px;
           }
         }
@@ -45,7 +45,7 @@
         left: 50%;
         transform: translate(-50%, -50%);
 
-        @media (min-width: 768px) {
+        @include g-desktop {
           top: unset;
           bottom: 20%;
           left: 50%;
@@ -97,17 +97,116 @@
   }
 
   .home-resume {
-    background-color: rgb(28, 28, 28);
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     width: 100vw;
     scroll-snap-align: start;
 
-    @media (min-width: 768px) {
+    @include g-tablet {
       padding-top: $navbar-height;
+    }
+
+    .my-img {
+      flex: 0 0 100%;
+      max-width: 100%;
+      height: 100%;
+
+      @include g-large {
+        flex: 0 0 38%;
+        max-width: 38%;
+      }
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: scale-down;
+
+        @include g-tablet {
+          height: 50%;
+          width: 50%;
+        }
+
+        @include g-large {
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+
+    .my-detail {
+      flex: 0 0 100%;
+      max-width: 100%;
+
+      @include g-large {
+        flex: 0 0 62%;
+        max-width: 62%;
+      }
+    }
+
+    .dot {
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+    }
+
+    .dot-line {
+      .line {
+        height: 1px;
+        top: 10px;
+        z-index: -1;
+      }
+
+      .dot-item {
+        flex: 0 0 100%;
+        max-width: 100%;
+
+        @include g-tablet {
+          flex: 0 0 50%;
+          max-width: 50%;
+        }
+
+        @include g-large {
+          flex: 0 0 33.33%;
+          max-width: 33.33%;
+        }
+      }
+    }
+
+    .detail-list {
+      .detail-item {
+        flex: 0 0 100%;
+        max-width: 100%;
+
+        @include g-tablet {
+          flex: 0 0 50%;
+          max-width: 50%;
+        }
+
+        @include g-large {
+          flex: 0 0 33.33%;
+          max-width: 33.33%;
+        }
+
+        .prefix {
+          flex: 0 0 10%;
+          max-width: 10%;
+
+          .line {
+            width: 1px;
+            margin-left: 0.585rem;
+          }
+        }
+
+        .detail {
+          flex: 0 0 90%;
+          max-width: 90%;
+
+          @include g-tablet {
+            flex: 0 0 100%;
+            max-width: 100%;
+          }
+        }
+      }
     }
   }
 
@@ -121,7 +220,7 @@
     width: 100vw;
     scroll-snap-align: start;
 
-    @media (min-width: 768px) {
+    @include g-tablet {
       padding-top: $navbar-height;
     }
   }
@@ -136,7 +235,7 @@
     width: 100vw;
     scroll-snap-align: start;
 
-    @media (min-width: 768px) {
+    @include g-tablet {
       padding-top: $navbar-height;
     }
   }
@@ -151,7 +250,7 @@
     width: 100vw;
     scroll-snap-align: start;
 
-    @media (min-width: 768px) {
+    @include g-tablet {
       padding-top: $navbar-height;
     }
   }
