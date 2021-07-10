@@ -1,5 +1,5 @@
 <template>
-  <main id="home" class="home">
+  <main id="home" class="home" @scroll.passive="onScroll">
     <HomeOverview/>
     <HomeResume/>
     <HomeProject/>
@@ -23,6 +23,23 @@ export default Vue.extend({
     HomeProject,
     HomeResume,
     HomeOverview
+  },
+  methods: {
+    onScroll () {
+      const home = document.getElementById('home')
+      const navbar = document.getElementById('navbar')
+      if (home && navbar) {
+        const show: boolean = home.scrollTop >= (window.innerHeight - 100)
+
+        if (show !== this.$store.getters['app/isShowNavbar']) {
+          if (show) {
+            this.$store.dispatch('app/showNavbar')
+          } else {
+            this.$store.dispatch('app/hideNavbar')
+          }
+        }
+      }
+    },
   }
 })
 </script>
