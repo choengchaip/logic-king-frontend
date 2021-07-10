@@ -55,6 +55,10 @@ export default {
         property: 'og:description',
         content: 'The world is changing!, No time for relax, grab a coffee or beer then coding now!'
       },
+      {
+        name: 'google-site-verification',
+        content: 'W60PJ_la-CVBwg0NsnzFvGUEJlvQg_9rtt0lPQGKJfY'
+      },
     ],
     link: [
       {
