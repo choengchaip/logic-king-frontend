@@ -31,11 +31,11 @@ export default Vue.extend({
       if (home && navbar) {
         const show: boolean = home.scrollTop >= (window.innerHeight - 100)
 
-        if (show !== this.$store.getters['app/isShowNavbar']) {
+        if (show !== (this as any).$store.getters['app/isShowNavbar']) {
           if (show) {
-            this.$store.dispatch('app/showNavbar')
+            (this as any).$store.dispatch('app/showNavbar')
           } else {
-            this.$store.dispatch('app/hideNavbar')
+            (this as any).$store.dispatch('app/hideNavbar')
           }
         }
       }

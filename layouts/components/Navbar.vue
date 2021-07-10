@@ -16,7 +16,7 @@ import Vue from 'vue'
 export default Vue.extend({
   computed: {
     show (): boolean {
-      return this.$store.getters['app/isShowNavbar']
+      return (this as any).$store.getters['app/isShowNavbar']
     }
   }
 })
