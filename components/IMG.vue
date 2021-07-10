@@ -1,7 +1,5 @@
 <template>
-  <div v-lazy:background-image="options" :class="`bg-contain bg-no-repeat bg-center ${className}`">
-    <img class="invisible" :src="options.loading" :alt="alt">
-  </div>
+  <img :class="className" v-lazy="options" :alt="alt">
 </template>
 
 <script lang="ts">
@@ -26,15 +24,15 @@ export default Vue.extend({
       type: String
     }
   },
-  data () {
-    return {
-      options: {
+  computed: {
+    options () {
+      return {
         src: this.src,
         error: this.loadingSrc,
         loading: this.loadingSrc,
       }
-    }
-  },
+    },
+  }
 })
 </script>
 
