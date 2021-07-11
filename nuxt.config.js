@@ -139,6 +139,7 @@ export default {
   tailwindcss: {
     config: {
       purge: {
+        enabled: false,
         content: [
           'client/**/*.vue'
         ]

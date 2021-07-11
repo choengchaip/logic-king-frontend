@@ -1,5 +1,5 @@
 <template>
-  <img :class="`h-full w-full ${className}`" v-lazy="options" :alt="alt">
+  <img style="display: none" onload="this.style.display=''" :class="`h-full w-full ${className}`" v-lazy="options" :alt="alt">
 </template>
 
 <script lang="ts">
