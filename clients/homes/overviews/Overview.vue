@@ -33,11 +33,11 @@
       </div>
     </div>
     <div class="navigator-bar container mx-auto hidden sm:flex justify-center py-5 text-xs font-bold">
-      <a class="mx-6 uppercase select-none" href="#overview">{{ $t('about') }}</a>
-      <a class="mx-6 uppercase select-none" href="#resume">{{ $t('resume') }}</a>
-      <a class="mx-6 uppercase select-none" href="#project">{{ $t('project') }}</a>
-      <a class="mx-6 uppercase select-none" href="#skill">{{ $t('skill') }}</a>
-      <a class="mx-6 uppercase select-none" href="#blog">{{ $t('blog') }}</a>
+      <a class="flex-1 sm:flex-none mx-0 sm:mx-6 uppercase select-none text-center" href="#overview">{{ $t('about') }}</a>
+      <a class="flex-1 sm:flex-none mx-0 sm:mx-6 uppercase select-none text-center" href="#resume">{{ $t('resume') }}</a>
+      <a class="flex-1 sm:flex-none mx-0 sm:mx-6 uppercase select-none text-center" href="#project">{{ $t('project') }}</a>
+      <a class="flex-1 sm:flex-none mx-0 sm:mx-6 uppercase select-none text-center" href="#skill">{{ $t('skill') }}</a>
+      <a class="flex-1 sm:flex-none mx-0 sm:mx-6 uppercase select-none text-center" href="#blog">{{ $t('blog') }}</a>
     </div>
   </div>
 </template>
