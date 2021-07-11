@@ -1,37 +1,47 @@
 <template>
-  <img :class="className" v-lazy="options" :alt="alt">
+  <img :class="`h-full w-full ${className}`" v-lazy="options" :alt="alt">
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
 
-export default Vue.extend({
+import { computed, defineComponent } from '@vue/composition-api'
+
+interface Props {
+  className: string
+  src: string
+  loadingSrc: string
+  alt: string
+}
+
+export default defineComponent({
   props: {
     className: {
       type: String,
-      default: ''
+      default: '',
     },
     src: {
+      type: String,
       required: true,
-      type: String
     },
     loadingSrc: {
+      type: String,
       required: true,
-      type: String
     },
     alt: {
+      type: String,
       required: true,
-      type: String
-    }
-  },
-  computed: {
-    options () {
-      return {
-        src: this.src,
-        error: this.loadingSrc,
-        loading: this.loadingSrc,
-      }
     },
+  },
+  setup (props: Props) {
+    const options = computed(() => ({
+      src: props.src,
+      error: props.loadingSrc,
+      loading: props.loadingSrc
+    }))
+
+    return {
+      options: options as any,
+    }
   }
 })
 </script>

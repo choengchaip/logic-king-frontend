@@ -10,9 +10,16 @@ module.exports = {
   ],
   plugins: [],
   rules: {
+    'quote-props': 'off',
     'comma-dangle': 'off',
     'vue/html-closing-bracket-spacing': 'off',
     'vue/attribute-hyphenation': 'off',
     'vue/html-closing-bracket-newline': 'off',
+    'key-spacing': 'off',
+    'object-curly-spacing': 'off',
+    'lines-between-class-members': 'off',
+    'camelcase': 'off',
+    'vue/no-v-html': 'off',
+    'vue/max-attributes-per-line': 'off',
   }
 }

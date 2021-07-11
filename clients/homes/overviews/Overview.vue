@@ -1,5 +1,5 @@
 <template>
-  <div id="overview" class="home-overview flex flex-col">
+  <div id="overview" class="overview flex flex-col">
     <div class="container mx-auto flex items-center justify-between py-5 px-3 text-sm font-bold">
       <div class="flags flex">
         <NuxtLink class="mr-2" :to="switchLocalePath('th')">
@@ -43,37 +43,24 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
 import { v4 as uuidv4 } from 'uuid'
 import seed from 'random-seed'
+import { defineComponent, onMounted, ref } from '@vue/composition-api'
 import IMG from '~/components/IMG.vue'
 
-export default Vue.extend({
-  components: { IMG },
-  data: () => {
-    return {
-      max: 30,
-      count: 0,
-      cell: null,
-      icons: []
-    }
-  },
-  mounted () {
-    const vm = this;
+interface IIcon {
+  id: string
+  src: string
+  className: string
+}
 
-    (() => {
-      vm.header = setInterval(() => {
-        if (vm.icons.length < vm.max) {
-          vm.addIcon(vm)
-        }
-      }, 240)
-    })()
-  },
-  unmounted () {
-    clearInterval(this.cell)
-  },
-  methods: {
-    addIcon: (vm: any) => {
+export default defineComponent({
+  components: { IMG },
+  setup () {
+    const max = 30
+    let count = 0
+    const icons = ref<IIcon[]>([])
+    const addIcon = () => {
       const id = uuidv4()
       const logos: string[] = [
         '/docker_logo.png',
@@ -87,19 +74,33 @@ export default Vue.extend({
         '/swift_logo.png',
         '/ts_logo.png'
       ]
-      const logo = logos[vm.count % 10]
-      const [rx, ry] = [seed.create().intBetween(1, vm.max), seed.create().intBetween(1, vm.max)]
+      const logo = logos[count % 10]
+      const [rx, ry] = [seed.create().intBetween(1, max), seed.create().intBetween(1, max)]
 
-      vm.icons = [
+      icons.value = [
         {
           id,
           src: logo,
           className: `me-skill-${rx}-${ry}`
         },
-        ...vm.icons
+        ...icons.value
       ]
 
-      vm.count++
+      count++
+    }
+
+    onMounted(() => {
+      const s = setInterval(() => {
+        if (icons.value.length < max) {
+          addIcon()
+        } else {
+          clearInterval(s)
+        }
+      }, 240)
+    })
+
+    return {
+      icons: icons as unknown as () => IIcon[]
     }
   }
 })

@@ -4,7 +4,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import Home from '~/client/home/Index.vue'
+import Home from '~/clients/homes/Index.vue'
 
 export default Vue.extend({
   components: {

@@ -11,12 +11,14 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import { computed, defineComponent } from '@vue/composition-api'
 
-export default Vue.extend({
-  computed: {
-    show (): boolean {
-      return (this as any).$store.getters['app/isShowNavbar']
+export default defineComponent({
+  setup (_, { root: ctx }) {
+    const show = computed<boolean>(() => ctx.$store.getters['app/isShowNavbar'])
+
+    return {
+      show,
     }
   }
 })

@@ -1,5 +1,5 @@
 <template>
-  <div id="skill" class="home-skill">
+  <div id="skill" class="skill">
     <h2 class="text-4xl md:text-7xl text-white mb-4">
       {{ $t('skill_1') }}
     </h2>

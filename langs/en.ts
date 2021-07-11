@@ -39,4 +39,6 @@ export default {
   blog_1: 'Thinking ...',
   blog_2: 'there are a lot of knowledge',
   blog_3: 'cannot wait to share it to you :D',
+  progressing: 'progressing',
+  project_uploading: 'Adding project',
 }

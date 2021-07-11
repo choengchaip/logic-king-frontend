@@ -13,6 +13,10 @@ module.exports = {
       xl: '1200px'
       // => @media (min-width: 1280px) { ... }
     },
-    extend: {}
+    extend: {
+      spacing: {
+        full: '100%',
+      }
+    }
   }
 }

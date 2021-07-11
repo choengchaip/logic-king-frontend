@@ -4,7 +4,7 @@
   overflow-y: auto;
   scroll-behavior: smooth;
 
-  .home-overview {
+  .overview {
     height: 100vh;
     width: 100vw;
     scroll-snap-align: start;
@@ -103,7 +103,7 @@
     }
   }
 
-  .home-resume {
+  .resume {
     display: flex;
     flex-direction: column;
     width: 100vw;
@@ -214,19 +214,58 @@
     }
   }
 
-  .home-project {
-    background-color: rgb(12, 12, 12);
+  .project {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     width: 100vw;
     scroll-snap-align: start;
     padding-top: $navbar-height;
+
+    .project-item {
+      flex: 0 0 100%;
+      max-width: 100%;
+      padding: 1rem;
+
+      @include g-tablet {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+
+      @include g-desktop {
+        flex: 0 0 25%;
+        max-width: 25%;
+      }
+    }
+
+    // TODO: Delete after implement
+    .tmp-project-item {
+      flex: 0 0 100%;
+      max-width: 100%;
+
+      @include g-desktop {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+
+      .tmp-box {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 1rem;
+
+        @include g-tablet {
+          flex: 0 0 50%;
+          max-width: 50%;
+        }
+
+        &.mega {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+      }
+    }
   }
 
-  .home-skill {
+  .skill {
     background-color: rgb(28, 28, 28);
     display: flex;
     flex-direction: column;
@@ -238,7 +277,7 @@
     padding-top: $navbar-height;
   }
 
-  .home-blog {
+  .blog {
     background-color: rgb(12, 12, 12);
     display: flex;
     flex-direction: column;
