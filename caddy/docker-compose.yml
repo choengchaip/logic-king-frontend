@@ -1,0 +1,31 @@
+version: '3'
+services:
+  ingress:
+    build: .
+    image: ingress:latest
+    container_name: ingress
+    volumes:
+      - caddy_data:/data
+      - caddy_config:/config
+    env_file:
+      - .env
+    ports:
+      - 80:80
+      - 443:443
+    restart: always
+  logic-frontend:
+    build: ..
+    image: logic-frontend:latest
+    container_name: logic-frontend
+    environment:
+      APP_HOST: "0.0.0.0"
+      APP_PORT: "8000"
+    restart: always
+volumes:
+  caddy_data: {}
+  caddy_config: {}
+
+networks:
+  default:
+    external:
+      name: logic
