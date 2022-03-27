@@ -29,7 +29,7 @@ import Vue from 'vue'
 
 export default Vue.extend({
   components: {},
-  setup์(_:any, {root: ctx}:any) {
+  setup(_: any, {root: ctx}: any) {
     ctx.$store.dispatch('app/showNavbar')
     return {}
   },
