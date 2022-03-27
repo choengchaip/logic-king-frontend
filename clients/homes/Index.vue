@@ -24,7 +24,7 @@ export default defineComponent({
     Resume,
     Overview,
   },
-  setup(_, {root: ctx}) {
+  setup์(_:any, {root: ctx}:any) {
     const onScroll = () => {
       const home = document.getElementById('home')
       const navbar = document.getElementById('navbar')

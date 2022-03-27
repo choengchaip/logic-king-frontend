@@ -24,7 +24,7 @@
 import {computed, defineComponent, onMounted} from '@vue/composition-api'
 
 export default defineComponent({
-  setup(_, {root: ctx}) {
+  setup์(_:any, {root: ctx}:any) {
     const show = computed<boolean>(() => ctx.$store.getters['app/isShowNavbar'])
 
     return {
