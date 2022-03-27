@@ -15,7 +15,7 @@
       <div id="content" class="content h-full relative overflow-hidden">
         <div class="me-img absolute p-5 md:p-0 flex items-center justify-center">
           <IMG
-            src="https://logic-king.sgp1.digitaloceanspaces.com/singh_01.png"
+            src="/singh_01_small.png"
             loadingSrc="/singh_01_small.png"
             alt="Choengchai Phachonyut"
           />

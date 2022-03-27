@@ -20,13 +20,13 @@ export default Vue.extend({
           hid: 'image',
           name: 'image',
           property: 'image',
-          content: 'https://logic-king.sgp1.digitaloceanspaces.com/singh_04.png'
+          content: '/singh_04_small.png'
         },
         {
           hid: 'og:image',
           name: 'og:image',
           property: 'og:image',
-          content: 'https://logic-king.sgp1.digitaloceanspaces.com/singh_04.png'
+          content: '/singh_04_small.png'
         },
         {
           hid: 'title',

@@ -3,7 +3,7 @@
     <div class="flex flex-wrap sm:pt-16 sm:pb-8 sm:mb-16 border-b-0 sm-border-b lg:border-b-0">
       <div class="my-img flex justify-center p-4 sm:p-8 md:p-0">
         <IMG
-          src="https://logic-king.sgp1.digitaloceanspaces.com/singh_04.png"
+          src="/singh_04_small.png"
           loadingSrc="/singh_04_small.png"
           alt="Choengchai Phachonyut"
         />
