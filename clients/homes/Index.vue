@@ -9,7 +9,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@vue/composition-api'
+import {defineComponent} from '@vue/composition-api'
 import Overview from '~/clients/homes/overviews/Overview.vue'
 import Resume from '~/clients/homes/resumes/Resume.vue'
 import Project from '~/clients/homes/projects/Project.vue'
@@ -24,7 +24,7 @@ export default defineComponent({
     Resume,
     Overview,
   },
-  setup (_, { root: ctx }) {
+  setup(_, {root: ctx}) {
     const onScroll = () => {
       const home = document.getElementById('home')
       const navbar = document.getElementById('navbar')

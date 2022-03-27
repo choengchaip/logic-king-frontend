@@ -1,10 +1,11 @@
 <template>
-  <img style="display: none" onload="this.style.display=''" :class="`h-full w-full ${className}`" v-lazy="options" :alt="alt">
+  <img style="display: none" onload="this.style.display=''" :class="`h-full w-full ${className}`" v-lazy="options"
+       :alt="alt">
 </template>
 
 <script lang="ts">
 
-import { computed, defineComponent } from '@vue/composition-api'
+import {computed, defineComponent} from '@vue/composition-api'
 
 interface Props {
   className: string
@@ -25,18 +26,18 @@ export default defineComponent({
     },
     loadingSrc: {
       type: String,
-      required: true,
+      default: () => '',
     },
     alt: {
       type: String,
       required: true,
     },
   },
-  setup (props: Props) {
+  setup(props: Props) {
     const options = computed(() => ({
       src: props.src,
-      error: props.loadingSrc,
-      loading: props.loadingSrc
+      error: props.loadingSrc || props.src,
+      loading: props.loadingSrc || props.src,
     }))
 
     return {

@@ -40,5 +40,6 @@ export default {
   blog_2: 'there are a lot of knowledge',
   blog_3: 'cannot wait to share it to you :D',
   progressing: 'progressing',
+  done: 'done',
   project_uploading: 'Adding project',
 }

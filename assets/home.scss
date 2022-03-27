@@ -289,3 +289,11 @@
     padding-top: $navbar-height;
   }
 }
+
+// :((((
+.coe, .cmc, .car-shop, .master-photo {
+  margin-left: auto;
+  margin-right: auto;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
